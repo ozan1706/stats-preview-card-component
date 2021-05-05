@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #090b1a;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  font-size: 15px;
+}
+
+span {
+  display: inline-block;
+}
+
+.container {
+  background-color: #1b1938;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container .card {
+  font-size: calc(1vw - 1px);
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "heading heading heading" "paragraph paragraph paragraph" "companies templates queries";
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  padding: 50px;
+  row-gap: 10px;
+}
+
+.container .card .accent {
+  color: #aa5cdb;
+}
+
+.container .card .companies,
+.container .card .templates,
+.container .card .queries {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.container .card .companies span,
+.container .card .templates span,
+.container .card .queries span {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.container .card .companies h3,
+.container .card .templates h3,
+.container .card .queries h3 {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.container h1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: heading;
+}
+
+.container p {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: paragraph;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.container figure {
+  background-color: #aa5cdb;
+  margin: 0;
+  padding: 0;
+}
+
+.container figure img {
+  width: 100%;
+  display: block;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .container .card {
+    font-size: 1em;
+    row-gap: 15px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .container .card {
+        grid-template-areas: "heading" "paragraph" "companies" "templates" "queries";
+    padding: 25px;
+    font-size: 0.5em;
+    text-align: center;
+  }
+}
